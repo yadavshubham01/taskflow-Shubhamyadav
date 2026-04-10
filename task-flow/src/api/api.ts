@@ -5,7 +5,7 @@ import type { TaskInput } from '@/lib/schema/task.schema'
 
 
 /**
- * PROJECT API 
+ * Auth API 
  */
 export const signup = async (data: SignupInput) => {
   const res = await api.post("/auth/register", data)
