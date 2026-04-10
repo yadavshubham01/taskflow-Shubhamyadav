@@ -50,24 +50,6 @@ It allows users to create projects, manage tasks, and track progress using a **K
 
 ---
 
-###  Tradeoffs
-
-* ❌ No real backend (authentication is mocked)
-* ❌ No database (json-server used instead)
-* ❌ No real-time sync
-
----
-
-###  What was intentionally skipped
-
-* Full backend (PostgreSQL, migrations)
-* Advanced auth (refresh tokens, roles)
-* State management libraries (Redux/Zustand)
-
-👉 These were skipped to keep focus on **frontend quality and UX**
-
----
-
 ## 3. Running Locally
 
 ###  Prerequisites
@@ -81,17 +63,31 @@ It allows users to create projects, manage tasks, and track progress using a **K
 ```bash
 git clone https://github.com/your-username/taskflow
 cd taskflow
-
 cp .env.example .env
-
 docker compose up
 ```
 
 ---
+* Local Setup 
+
+**Frontend**
+```bash
+cd task-flow
+npm install
+npm run
+```
+
+**backend**
+```bash
+cd mock-server
+npm install
+npm start
+```
+---
 
 ###  Access
 
-* Frontend: [http://localhost:3000](http://localhost:3000)
+* Frontend: [http://localhost:5173](http://localhost:5173)
 * API: [http://localhost:4000](http://localhost:4000)
 
 ---
@@ -111,6 +107,80 @@ Use the following credentials to log in:
 ```text
 Email:    test@example.com
 Password: password123
+```
+
+---
+##  Project Structure
+
+```bash
+
+task-flow/
+│
+├── task-flow/            #(frontent)  React App (Vite + TS)
+│   ├── src/
+│   │   ├── api/                 # API layer (axios, endpoints)
+│   │   │   ├── axios.ts
+│   │   │   └── api.ts   
+│   │   │
+│   │   ├── assets/              # Images, icons, etc.
+│   │   │
+│   │   ├── components/
+│   │   │   ├── Auth/
+│   │   │   │   ├── signin.form.tsx
+│   │   │   │   └── signup.form.tsx
+│   │   │   │
+│   │   │   ├── Projects/
+│   │   │   │   ├── AddProject.tsx
+│   │   │   │   ├── EditProject.tsx
+│   │   │   │   ├── ProjectActions.tsx
+│   │   │   │   └── ProjectCard.tsx
+│   │   │   │
+│   │   │   ├── Tasks/
+│   │   │   │   ├── AddTask.tsx
+│   │   │   │   ├── EditTask.tsx
+│   │   │   │   ├── Column.tsx
+│   │   │   │   └── TaskCard.tsx
+│   │   │   │
+│   │   │   ├── ui/              # shadcn reusable UI components
+│   │   │   │
+│   │   │   └── Navbar.tsx
+│   │   │
+│   │   ├── hooks/
+│   │   │   └── use-auth.ts
+│   │   │
+│   │   ├── lib/
+│   │   │   └── schema.ts        # validation / zod schemas
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── Projects.tsx
+│   │   │   ├── ProjectDetail.tsx
+│   │   │   ├── Signin.tsx
+│   │   │   └── Signup.tsx
+│   │   │
+│   │   ├── utils/
+│   │   │   └── protectRoute.ts
+│   │   │
+│   │   ├── App.tsx
+│   │   ├── main.tsx
+│   │   └── index.css
+│   │
+│   ├── public/
+│   ├── Dockerfile
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── vite.config.ts
+│
+├── mock-server/                 # Backend (json-server + auth)
+│   ├── db.json
+│   ├── server.js
+│   ├── package.json
+│   └── Dockerfile
+│
+├── docker-compose.yml           # Multi-container setup
+├── .gitignore
+├── README.md
+└── .dockerignore (optional root config)
+
 ```
 
 ---
@@ -175,15 +245,16 @@ Password: password123
 }
 ```
 
----
-
-#### DELETE /projects/:id
-
----
+#### DELETE /projects/:id → Response `204 No Content`
 
 ###  Tasks
 
 #### GET /projects/:id/tasks
+
+```json
+
+{ "tasks": [ /* task objects */ ] }
+```
 
 #### POST /projects/:id/tasks
 
@@ -205,12 +276,7 @@ Password: password123
 }
 ```
 
----
-
-#### DELETE /tasks/:id
-
----
-
+#### DELETE /tasks/:id  → Response `204 No Content`
 
 ##  Final Thoughts
 
@@ -223,13 +289,7 @@ This project focuses on **frontend engineering quality**, including:
 
 ---
 
-#  Live Demo (optional)
-
-*Add if deployed*
-
----
-
-# ⭐ Author
+## ⭐ Author
 
 **Shubham Yadav**
 
