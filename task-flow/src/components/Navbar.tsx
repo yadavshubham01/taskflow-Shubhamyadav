@@ -11,7 +11,7 @@ export default function Navbar() {
 
   const handleLogout = () => {
     clearAuth()
-    navigate("/signin")
+    navigate("/login")
   }
 
   return (

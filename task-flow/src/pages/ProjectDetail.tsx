@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import Navbar from "@/components/Navbar"
-import { deleteTask, getProjectById, getTasks, updateTask } from "@/api/api"
+import { getProjectById, getTasks, updateTask } from "@/api/api"
 import AddTaskDialog from "@/components/Tasks/AddTask"
 import { DndContext, closestCenter } from "@dnd-kit/core"
 import Column from "@/components/Tasks/Column"
@@ -14,7 +14,6 @@ import {
     BreadcrumbPage,
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
-import { toast } from "sonner"
 
 const columns = ["todo", "in_progress", "done"]
 
