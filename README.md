@@ -1,5 +1,7 @@
 #  TaskFlow – Project Management App
 
+![Wall Calendar Aesthetic](./task-flow/public/Sample.png)
+
 ## 1. Overview
 
 TaskFlow is a modern project and task management web application built with **React + TypeScript**.
@@ -37,7 +39,6 @@ It allows users to create projects, manage tasks, and track progress using a **K
 
 * Docker Compose
 
----
 
 ## 2. Architecture Decisions
 
@@ -56,7 +57,6 @@ It allows users to create projects, manage tasks, and track progress using a **K
 
 * Docker installed
 
----
 
 ###  Steps
 
@@ -74,6 +74,7 @@ docker compose up
 ```bash
 cd task-flow
 npm install
+cp .env.example .env
 npm run
 ```
 
