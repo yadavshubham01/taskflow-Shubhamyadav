@@ -12,7 +12,7 @@ export const ProjectCard = ({ project, fetchProjects }: any) => {
     <>
       <Card
         onClick={() => navigate(`/projects/${project.id}`)}
-        className="cursor-pointer transition hover:shadow-md border border-gray-200 dark:border-gray-700"
+        className="cursor-pointer bg-white border-slate-200 dark:bg-slate-800 transition hover:shadow-md border dark:border-gray-700"
       >
         <CardContent className="p-4 flex flex-col justify-between h-[120px]">
 

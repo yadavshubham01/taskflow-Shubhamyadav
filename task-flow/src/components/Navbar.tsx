@@ -15,7 +15,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className="border-b bg-gray-50 dark:bg-gray-900">
+    <header className="bg-white shadow-sm border-b px-3 sm:px-6 py-1 border-slate-200 dark:bg-gray-900 dark:border-slate-700">
       <div className="flex items-center justify-between px-4 h-14">
 
         {/* Logo */}

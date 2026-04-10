@@ -88,7 +88,7 @@ export default function ProjectDetail() {
     }, {})
 
     return (
-        <div className="flex-1">
+        <div className="flex-1 bg-neutral-100 dark:bg-[#09111C]">
             <Navbar />
 
             <div className="p-4 space-y-4">
@@ -116,7 +116,7 @@ export default function ProjectDetail() {
                 </Breadcrumb>
 
                 {/* Header */}
-                <div className="flex justify-between items-start bg-gray-100 dark:bg-gray-900 border rounded-xl p-4">
+                <div className="flex justify-between items-start bg-neutral-100 dark:bg-gray-900  p-4">
 
                     <div>
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
@@ -132,7 +132,7 @@ export default function ProjectDetail() {
                 </div>
 
                 {/* Filters */}
-                <div className="flex gap-2 flex-wrap bg-gray-100 dark:bg-gray-900 border rounded-xl p-3">
+                <div className="flex gap-2 flex-wrap bg-neutral-100 dark:bg-gray-900 p-3">
                     <select
                         value={statusFilter}
                         onChange={(e) => setStatusFilter(e.target.value)}

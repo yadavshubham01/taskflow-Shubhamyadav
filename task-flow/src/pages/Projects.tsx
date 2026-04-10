@@ -24,7 +24,7 @@ export default function ProjectsPage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-neutral-100 dark:bg-[#09111C]">
       <Navbar />
 
       <div className="px-4 py-6 space-y-6">

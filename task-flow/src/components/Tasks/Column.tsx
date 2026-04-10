@@ -12,7 +12,7 @@ export default function Column({ id, tasks , onUpdate }: any) {
   return (
     <div
       ref={setNodeRef}
-      className="bg-gray-100 dark:bg-gray-800 rounded-xl p-3 min-h-[300px] flex flex-col"
+      className="bg-white dark:bg-gray-800 rounded-xl p-3 min-h-[300px] flex flex-col"
     >
       <div className="flex items-center justify-between mb-3">
         <h3 className="text-sm font-medium text-gray-700 dark:text-gray-100">

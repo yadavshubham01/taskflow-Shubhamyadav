@@ -30,7 +30,7 @@ export default function TaskCard({ task, onUpdate }: any) {
     <div
   ref={setNodeRef}
   style={style}
-  className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg  p-3 hover:shadow-sm transition"
+  className="bg-neutral-100 dark:bg-slate-900 border border-slate-200 dark:border-gray-700 rounded-lg  p-3 hover:shadow-sm transition"
 >
   {/* DRAG HANDLE */}
   <div
