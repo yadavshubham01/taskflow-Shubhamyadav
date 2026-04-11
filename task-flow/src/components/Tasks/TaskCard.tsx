@@ -3,8 +3,13 @@ import { useDraggable } from "@dnd-kit/core"
 import { useState } from "react"
 import { toast } from "sonner"
 import EditTaskDialog from "./EditTask"
+import type { Task } from "./types"
 
-export default function TaskCard({ task, onUpdate }: any) {
+type Props = {
+  task: Task
+  onUpdate: () => void
+}
+export default function TaskCard({ task, onUpdate }:Props) {
   const [openEdit, setOpenEdit] = useState(false)
   const { attributes, listeners, setNodeRef, transform } =
     useDraggable({
@@ -17,7 +22,7 @@ export default function TaskCard({ task, onUpdate }: any) {
       }
     : undefined
 
-  const handleDelete = async (e: any) => {
+  const handleDelete = async (e: React.MouseEvent) => {
      e.stopPropagation()
     if (!confirm("Delete task?")) return
 

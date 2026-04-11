@@ -4,7 +4,11 @@ import EditProjectDialog, { type Project } from "./EditProject"
 import ProjectActions from "./ProjectActions"
 import { useNavigate } from "react-router-dom"
 
-export const ProjectCard = ({ project, fetchProjects }: any) => {
+type Props ={
+  project : Project,
+  fetchProjects : () => void;
+}
+export const ProjectCard = ({ project, fetchProjects }: Props) => {
   const [editProject, setEditProject] = useState<Project | null>(null)
   const navigate = useNavigate()
 
@@ -43,7 +47,7 @@ export const ProjectCard = ({ project, fetchProjects }: any) => {
             <ProjectActions
               project={project}
               onDelete={fetchProjects}
-              onEdit={(p: any) => setEditProject(p)}
+              onEdit={(p: Project) => setEditProject(p)}
             />
           </div>
 

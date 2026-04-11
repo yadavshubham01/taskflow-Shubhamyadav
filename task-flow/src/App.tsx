@@ -8,28 +8,28 @@ import ProjectDetail from "./pages/ProjectDetail";
 import { Toaster } from "sonner"
 
 function App() {
-  
+
   return (
     <>
-     <Toaster richColors position="top-right" />
-     <BrowserRouter>
-      <Routes>
-        <Route path="/login" element={<Signin />} />
-       <Route path="/" element={<Signup />} /> 
-       <Route path="/projects" element={
-         <ProtectedRoute>
-          <ProjectsPage/>
-         </ProtectedRoute>
-       }/>
-       <Route
-        path="/projects/:id"
-        element={
-       <ProtectedRoute>
-        <ProjectDetail />
-       </ProtectedRoute>
-      }/>
-      </Routes>
-     </BrowserRouter>
+      <Toaster richColors position="top-right" />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/login" element={<Signin />} />
+          <Route path="/" element={<Signup />} />
+          <Route path="/projects" element={
+            <ProtectedRoute>
+              <ProjectsPage />
+            </ProtectedRoute>
+          } />
+          <Route
+            path="/projects/:id"
+            element={
+              <ProtectedRoute>
+                <ProjectDetail />
+              </ProtectedRoute>
+            } />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }

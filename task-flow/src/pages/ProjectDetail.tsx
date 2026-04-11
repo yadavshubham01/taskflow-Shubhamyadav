@@ -14,6 +14,8 @@ import {
     BreadcrumbPage,
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
+import type { Project } from "@/components/Projects/EditProject"
+import type { Task } from "@/components/Tasks/types"
 
 const columns = ["todo", "in_progress", "done"]
 
@@ -21,8 +23,8 @@ export default function ProjectDetail() {
     const { id } = useParams()
     const navigate = useNavigate()
 
-    const [project, setProject] = useState<any>(null)
-    const [tasks, setTasks] = useState<any[]>([])
+    const [project, setProject] = useState<Project | null>(null)
+    const [tasks, setTasks] = useState<Task[]>([])
     const [loading, setLoading] = useState(true)
 
     const [statusFilter, setStatusFilter] = useState("all")

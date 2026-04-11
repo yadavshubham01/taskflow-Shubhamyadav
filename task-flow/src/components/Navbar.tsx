@@ -31,7 +31,7 @@ export default function Navbar() {
 
          <button
           onClick={toggleTheme}
-          className="text-sm px-2 py-1 border rounded-md"
+          className="text-sm px-2 py-1 border rounded-md cursor-pointer"
            >
             {theme === "light" ? <Moon size={16} /> : <Sun size={16} />}
            </button>

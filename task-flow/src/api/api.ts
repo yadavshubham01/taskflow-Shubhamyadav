@@ -9,13 +9,11 @@ import type { TaskInput } from '@/lib/schema/task.schema'
  */
 export const signup = async (data: SignupInput) => {
   const res = await api.post("/auth/register", data)
-  console.log(res)
   return res.data
 }
 
 export const signin = async (data: SigninInput) => {
   const res = await api.post("/auth/login", data)
-  console.log(res)
   return res.data
 }
 

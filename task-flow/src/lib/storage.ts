@@ -6,7 +6,6 @@ export const setAuth = (data: any) => {
 export const getToken = () => localStorage.getItem("token")
 export const getUser = () => {
   const u = localStorage.getItem("user")
-  console.log("u",u)
   return u ? JSON.parse(u) : null
 }
 
