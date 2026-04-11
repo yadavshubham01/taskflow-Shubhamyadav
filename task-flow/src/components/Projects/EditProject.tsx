@@ -5,7 +5,18 @@ import { updateProject } from "@/api/api"
 import { toast } from "sonner"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../ui/dialog"
 
-export default function EditProjectDialog({ project, onSuccess, onClose }: any) {
+export type Project = {
+  id: string
+  name: string
+  description?: string
+}
+type EditProjectProps = {
+  project:Project,
+  onSuccess:() => void;
+  onClose:() => void;
+}
+
+export default function EditProjectDialog({ project, onSuccess, onClose }: EditProjectProps) {
     const form = useForm({
         resolver: zodResolver(projectSchema),
         defaultValues: project,

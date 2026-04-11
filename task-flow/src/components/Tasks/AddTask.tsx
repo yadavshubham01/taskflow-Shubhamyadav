@@ -44,7 +44,7 @@ export default function AddTaskDialog({ projectId, onSuccess }: any) {
       description: "",
       status: "todo",
       priority: "medium",
-      due_date: "",
+      due_date: new Date().toISOString().split("T")[0],
     },
   })
 

@@ -1,11 +1,11 @@
 import { useState } from "react"
 import { Card, CardContent } from "../ui/card"
-import EditProjectDialog from "./EditProject"
+import EditProjectDialog, { type Project } from "./EditProject"
 import ProjectActions from "./ProjectActions"
 import { useNavigate } from "react-router-dom"
 
 export const ProjectCard = ({ project, fetchProjects }: any) => {
-  const [editProject, setEditProject] = useState<any | null>(null)
+  const [editProject, setEditProject] = useState<Project | null>(null)
   const navigate = useNavigate()
 
   return (
@@ -16,7 +16,7 @@ export const ProjectCard = ({ project, fetchProjects }: any) => {
       >
         <CardContent className="p-4 flex flex-col justify-between h-[120px]">
 
-          {/* Content */}
+          {/* Project */}
           <div className="space-y-1">
             <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100 line-clamp-1">
               {project.name}

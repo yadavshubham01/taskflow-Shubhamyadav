@@ -7,8 +7,15 @@ import {
 import { MoreVertical } from "lucide-react"
 import { deleteProject } from "@/api/api"
 import { toast } from "sonner"
+import type { Project } from "./EditProject"
 
-export default function ProjectActions({ project, onDelete, onEdit }: any) {
+type ProjectActionsProps = {
+  project:Project,
+  onDelete:() => void,
+  onEdit: (project:Project) => void,
+}
+
+export default function ProjectActions({ project, onDelete, onEdit }: ProjectActionsProps) {
   const handleDelete = async () => {
   const confirmDelete = window.confirm("Are you sure you want to delete?")
 

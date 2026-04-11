@@ -31,12 +31,13 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { taskSchema } from "@/lib/schema/task.schema"
 import { updateTask } from "@/api/api"
 import { toast } from "sonner"
+import type { EditTaskProps } from "./types"
 
 export default function EditTaskDialog({
   task,
   onClose,
   onSuccess,
-}: any) {
+}: EditTaskProps) {
   const form = useForm({
     resolver: zodResolver(taskSchema),
     defaultValues: task,
